@@ -21,3 +21,10 @@ Name: myproject-siteconfig-extension
 SilverStripe\SiteConfig\SiteConfig:
   extensions:
     - SiteConfigExt
+
+---
+Name: page-extension
+---
+Page:
+  extensions:
+    - DNADesign\Elemental\Extensions\ElementalPageExtension

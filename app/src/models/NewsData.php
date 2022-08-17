@@ -14,10 +14,13 @@ use SilverStripe\Security\Security;
  */
 class NewsData extends DataObject
 {
+  private static $default_sort = ['Sort' => 'ASC'];
+
   private static $db = [
     'Title' => 'Varchar',
     'Content' => 'HTMLText',
     'URLSegment' => 'Varchar(150)',
+    'Sort' => 'Int',
   ];
 
   private static $has_many = [
@@ -49,6 +52,7 @@ class NewsData extends DataObject
       "Created_byID",
       "Updated_byID",
       'URLSegment',
+      'Sort',
     ]);
 
     $fields->addFieldToTab(

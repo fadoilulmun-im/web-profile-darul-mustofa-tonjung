@@ -1,0 +1,13 @@
+{
+    "name": "il/darmus",
+    "extra": {
+        "expose": [
+            "css",
+            "fonts",
+            "images",
+            "js",
+            "scss"
+        ]
+	},
+    "require": {}
+}

@@ -1,6 +1,7 @@
 <?php
 
 use SilverStripe\Admin\ModelAdmin;
+use UndefinedOffset\SortableGridField\Forms\GridFieldSortableRows;
 
 
 /**
@@ -32,4 +33,16 @@ class NewsDataAdmin extends ModelAdmin
   private static $menu_title = 'News';
 
   private static $menu_icon_class = 'font-icon-news';
+
+  function getEditForm($id = null, $fields = null){
+    $form = parent::getEditForm($id, $fields);
+    if ($this->modelClass == "NewsData"){
+      $form->Fields()
+      ->fieldByName($this->sanitiseClassName($this->modelClass))
+      ->getConfig()
+      ->addComponent(new GridFieldSortableRows('Sort'));
+    }
+
+    return $form;
+  }
 }

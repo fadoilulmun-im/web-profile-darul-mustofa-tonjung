@@ -9,5 +9,9 @@ namespace {
         private static $db = [];
 
         private static $has_one = [];
+
+        public function getSocialMediaData(){
+            return SocialMediaData::get();
+        }
     }
 }

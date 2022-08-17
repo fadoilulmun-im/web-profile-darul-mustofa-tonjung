@@ -6,6 +6,10 @@ use SilverStripe\Forms\TextareaField;
 use SilverStripe\Forms\TextField;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 
+use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
+use UndefinedOffset\SortableGridField\Forms\GridFieldSortableRows;
+
 class SiteConfigExt extends DataExtension
 {
   private static $db = [
@@ -19,7 +23,7 @@ class SiteConfigExt extends DataExtension
   ];
 
   public function updateCMSFields(FieldList $fields){
-    $fields->removeByName(["Tagline"]);
+    $fields->removeByName(["Tagline", 'Access']);
     $fields->addFieldToTab(
       'Root.Main',
       UploadField::create('Logo', 'Logo')
@@ -41,6 +45,11 @@ class SiteConfigExt extends DataExtension
       'Root.Main',
       TextField::create('Email', 'Email')
     );
+
+    $config = GridFieldConfig_RecordEditor::create();
+    $config->addComponent(new GridFieldSortableRows('Sort'));
+
+    $fields->addFieldsToTab('Root.SocialMedia', new GridField('SocialMediaData', 'SocialMediaData', SocialMediaData::get(), $config));
 
     return $fields;
   }
