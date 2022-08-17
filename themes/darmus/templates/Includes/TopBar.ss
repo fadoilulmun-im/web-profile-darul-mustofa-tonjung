@@ -3,7 +3,7 @@
     <div class="container text-center">
       <div class="row align-items-center justify-content-center">
         <div class="col-lg-9 d-none d-lg-block">
-          <a class="small mr-3"><span class="icon-question-circle-o mr-2"></span> Have a questions?</a>
+          <a class="small mr-3">Have a questions <span class="icon-question-circle-o mr-2"></span></a>
           <% if $SiteConfig.Phone %>
             <a href="tel:$SiteConfig.Phone" class="small mr-3"><span class="icon-phone2 mr-2"></span> $SiteConfig.Phone</a> 
           <% end_if %>

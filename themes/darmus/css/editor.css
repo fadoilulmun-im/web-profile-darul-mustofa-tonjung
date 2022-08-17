@@ -1,0 +1,10 @@
+/**
+ * This support file is used to style the WYSIWYG editor in the CMS
+ */
+
+@import "typography.css?2";
+body.mceContentBody{font-size:13px;}
+.text-justify  { text-align: justify !important; }
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}

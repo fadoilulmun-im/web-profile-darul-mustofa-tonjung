@@ -16,6 +16,6 @@ Member::set_password_validator($validator);
 
 // CMSMenu::remove_menu_item(ReportAdmin::class);
 CMSMenu::remove_menu_class(ReportAdmin::class);
-CMSMenu::remove_menu_class(ArchiveAdmin::class);
+// CMSMenu::remove_menu_class(ArchiveAdmin::class);
 CMSMenu::remove_menu_class(CampaignAdmin::class);
 CMSMenu::remove_menu_class(AssetAdmin::class);

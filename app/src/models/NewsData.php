@@ -87,7 +87,6 @@ class NewsData extends DataObject
     }
   }
 
-
   public function onBeforeDelete()
   {
     foreach($this->Images() as $image){

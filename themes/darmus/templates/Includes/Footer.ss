@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-3">
-        <p class="mb-4"><img src="$ThemeDir/images/logo-darmus.png" alt="Image" height="70"></p>
+        <p class="mb-4"><img src="$SiteConfig.Logo.URL" alt="Image" height="70"></p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nemo minima qui dolor, iusto iure.</p>  
         <p><a href="#">Learn More</a></p>
       </div>
