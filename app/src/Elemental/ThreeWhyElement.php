@@ -5,25 +5,25 @@ namespace Elemental;
 use DNADesign\Elemental\Models\BaseElement;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
-use SliderBannerData;
+use ThreeWhyData;
 use UndefinedOffset\SortableGridField\Forms\GridFieldSortableRows;
 
-class SliderBannerElement extends BaseElement
+class ThreeWhyElement extends BaseElement
 {
-  private static $singular_name = 'Slider Banner';
-  private static $plural_name = 'Sliders Banner';
-  private static $description = 'Slider banner element';
+  private static $singular_name = 'Three Why';
+  private static $plural_name = 'Threes';
+  private static $description = 'Three why element';
   private static $inline_editable = false;
-  private static $icon = 'font-icon-block-carousel';
+  private static $icon = 'font-icon-dot-3';
 
   private static $has_many = [
-    'SliderBannerData' => SliderBannerData::class,
+    'ThreeWhyDatas' => ThreeWhyData::class,
   ];
 
   public function getCMSFields()
   {
     $fields = parent::getCMSFields();
-    $fields->removeByName(['SliderBannerData']);
+    $fields->removeByName(['ThreeWhyDatas']);
 
     $config = GridFieldConfig_RecordEditor::create();
     $config->addComponent(new GridFieldSortableRows('Sort'));
@@ -31,9 +31,9 @@ class SliderBannerElement extends BaseElement
     $fields->addFieldToTab(
       'Root.Main', 
       GridField::create(
-        'SliderBannerData',
-        'Slider Banner Data',
-        $this->SliderBannerData(),
+        'ThreeWhyDatas',
+        'Three Why Data',
+        $this->ThreeWhyDatas(),
         $config
       )
     );
@@ -43,6 +43,6 @@ class SliderBannerElement extends BaseElement
 
   public function getType()
   {
-    return 'Slider Banner';
+    return 'Three Why';
   }
 }

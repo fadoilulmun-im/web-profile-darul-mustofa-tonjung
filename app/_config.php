@@ -8,6 +8,7 @@ use SilverStripe\AssetAdmin\Controller\AssetAdmin;
 use SilverStripe\CampaignAdmin\CampaignAdmin;
 use SilverStripe\Reports\ReportAdmin;
 use SilverStripe\VersionedAdmin\ArchiveAdmin;
+use SilverStripe\Forms\HTMLEditor\TinyMCEConfig;
 
 // remove PasswordValidator for SilverStripe 5.0
 $validator = PasswordValidator::create();
@@ -19,3 +20,7 @@ CMSMenu::remove_menu_class(ReportAdmin::class);
 // CMSMenu::remove_menu_class(ArchiveAdmin::class);
 CMSMenu::remove_menu_class(CampaignAdmin::class);
 CMSMenu::remove_menu_class(AssetAdmin::class);
+
+date_default_timezone_set('Asia/Jakarta');
+TinyMCEConfig::get('cms')->enablePlugins('textcolor');
+TinyMCEConfig::get('cms')->insertButtonsBefore('formatselect', 'forecolor');

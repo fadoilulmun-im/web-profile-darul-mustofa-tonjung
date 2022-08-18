@@ -655,7 +655,7 @@ h1, h2, h3, h4, h5,
   .news-updates .post-entry-big .img-link {
     position: relative;
     display: inline-block;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
     overflow: hidden; }
     .news-updates .post-entry-big .img-link img {
       -webkit-transition: .3s all ease;
@@ -944,7 +944,7 @@ h1, h2, h3, h4, h5,
     text-decoration: underline; }
   .footer .copyright {
     color: #fff;
-    padding-top: 7rem;
+    padding-top: 3rem;
     text-align: center; }
 
 .ftco-subscribe-1 {

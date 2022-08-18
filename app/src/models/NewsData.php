@@ -94,4 +94,9 @@ class NewsData extends DataObject
     }
     parent::onBeforeDelete();
   }
+
+  public function Link()
+  {
+    return NewsPage::get()->first()->Link().'s/'.$this->URLSegment;
+  }
 }

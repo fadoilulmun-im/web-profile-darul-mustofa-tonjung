@@ -1,7 +1,7 @@
-$('.owl-carousel-2').owlCarousel({
-  loop:true,
-  items:1,
-  autoplay:true,
-  // autoplayTimeout:1000,
-  autoplayHoverPause:true
+$('.owl-carousel-news-detail').owlCarousel({
+  center: false,
+  items: 1,
+  loop: true,
+  autoplay: true,
+  smartSpeed: 500,
 });

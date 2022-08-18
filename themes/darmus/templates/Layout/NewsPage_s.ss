@@ -5,7 +5,7 @@
       <div class="row justify-content-center">
         <% with NewsOne %>
           <div class="col-md-12 mb-4">
-            <div class="mb-5 owl-carousel-2">
+            <div class="mb-5 owl-carousel-news-detail owl-carousel">
               <% loop Images %>
                 <img src="$URL" alt="Image" class="img-fluid">
               <% end_loop %>

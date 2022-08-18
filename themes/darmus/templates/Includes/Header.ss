@@ -11,7 +11,7 @@
         <nav class="site-navigation position-relative text-right" role="navigation">
           <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
             <% loop Menu(1) %>
-            <li class="<% if $LinkingMode == 'current' %>active<% end_if %>">
+              <li class="<% if $LinkingMode == 'current' %>active<% end_if %>">
                 <a href="$Link" class="nav-link text-left">$MenuTitle.XML</a>
               </li>
             <% end_loop %>

@@ -5,25 +5,25 @@ namespace Elemental;
 use DNADesign\Elemental\Models\BaseElement;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
-use SliderBannerData;
 use UndefinedOffset\SortableGridField\Forms\GridFieldSortableRows;
+use TestimoniData;
 
-class SliderBannerElement extends BaseElement
+class TestimoniElement extends BaseElement
 {
-  private static $singular_name = 'Slider Banner';
-  private static $plural_name = 'Sliders Banner';
-  private static $description = 'Slider banner element';
+  private static $singular_name = 'Testimoni';
+  private static $plural_name = 'Testimonis';
+  private static $description = 'Container box untuk testimonials';
+  private static $icon = 'font-icon-happy';
   private static $inline_editable = false;
-  private static $icon = 'font-icon-block-carousel';
 
   private static $has_many = [
-    'SliderBannerData' => SliderBannerData::class,
+    'TestimoniDatas' => TestimoniData::class,
   ];
 
   public function getCMSFields()
   {
     $fields = parent::getCMSFields();
-    $fields->removeByName(['SliderBannerData']);
+    $fields->removeByName(['TestimoniDatas']);
 
     $config = GridFieldConfig_RecordEditor::create();
     $config->addComponent(new GridFieldSortableRows('Sort'));
@@ -31,9 +31,9 @@ class SliderBannerElement extends BaseElement
     $fields->addFieldToTab(
       'Root.Main', 
       GridField::create(
-        'SliderBannerData',
-        'Slider Banner Data',
-        $this->SliderBannerData(),
+        'TestimoniDatas',
+        'Testimoni Data',
+        $this->TestimoniDatas(),
         $config
       )
     );
@@ -43,6 +43,6 @@ class SliderBannerElement extends BaseElement
 
   public function getType()
   {
-    return 'Slider Banner';
+    return 'Testimonials';
   }
 }
