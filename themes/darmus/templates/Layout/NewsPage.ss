@@ -9,7 +9,7 @@
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="course-1-item">
                   <figure class="thumnail">
-                    <a href="s/$URLSegment"><img src="$Images.First.URL" alt="Image" class="img-fluid"></a>
+                    <a href="s/$URLSegment"><img src="$Images.First.Fill(350,216).URL" alt="Image" class="img-fluid"></a>
                     <div class="price">$Created.Nice</div>
                     <%-- <div class="category"><h3>$Title</h3></div>   --%>
                   </figure>
