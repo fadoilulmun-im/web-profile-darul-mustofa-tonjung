@@ -4,7 +4,7 @@
       <div class="col-lg-3">
         <p class="mb-4"><img src="$SiteConfig.Logo.URL" alt="Image" height="70"></p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nemo minima qui dolor, iusto iure.</p>  
-        <p><a href="#">Learn More</a></p>
+        <p><a href="{$BaseHref}about-us">Learn More</a></p>
       </div>
       <div class="col-lg-3">
         <h3 class="footer-heading"><span>Links</span></h3>
@@ -15,13 +15,14 @@
         </ul>
       </div>
       <div class="col-lg-2">
+        <% if Menu(2) %>
           <h3 class="footer-heading"><span>Our School</span></h3>
           <ul class="list-unstyled">
-            <li><a href="#">TK</a></li>
-            <li><a href="#">SMP</a></li>
-            <li><a href="#">SMA</a></li>
-            <li><a href="#">SMK</a></li>
+            <% loop Menu(2) %>
+              <li><a href="$Link">$MenuTitle.XML</a></li>
+            <% end_loop %>
           </ul>
+        <% end_if %>
       </div>
       <div class="col-lg-4">
           <h3 class="footer-heading"><span>Contact</span></h3>

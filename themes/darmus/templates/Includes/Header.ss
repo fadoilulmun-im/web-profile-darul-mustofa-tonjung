@@ -11,9 +11,21 @@
         <nav class="site-navigation position-relative text-right" role="navigation">
           <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
             <% loop Menu(1) %>
-              <li class="<% if $LinkingMode == 'current' %>active<% end_if %>">
-                <a href="$Link" class="nav-link text-left">$MenuTitle.XML</a>
-              </li>
+              <% if Children  %>
+                <li class="has-children <% if $LinkingMode == 'current' || $LinkingMode == 'section' %>active<% end_if %>">
+                  <a href="$Link" class="nav-link text-left">$MenuTitle.XML</a>
+                  <ul class="dropdown">
+                    <% loop Children  %>
+                      <li class="<% if $LinkingMode == 'current' %>active<% end_if %>"><a href="$Link">$MenuTitle.XML</a></li>
+                    <% end_loop %>
+                  </ul>
+                </li>
+              <% else %>
+                <li class="<% if $LinkingMode == 'current' %>active<% end_if %>">
+                  <a href="$Link" class="nav-link text-left">$MenuTitle.XML</a>
+                </li>
+              <% end_if %>
+              
             <% end_loop %>
           </ul>                                                                                                                                                                                                                                                                                          </ul>
         </nav>
