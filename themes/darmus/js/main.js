@@ -179,7 +179,7 @@ jQuery(document).ready(function($) {
 		if ( $('.owl-slide').length > 0 ) {
 			$('.owl-slide').owlCarousel({
 		    center: false,
-		    items: 2,
+		    items: 1,
 		    loop: true,
 				stagePadding: 0,
 		    margin: 30,
