@@ -99,4 +99,8 @@ class NewsData extends DataObject
   {
     return NewsPage::get()->first()->Link().'s/'.$this->URLSegment;
   }
+
+  public function ShortContent($length = 30) {
+    return $this->Content ? substr(strip_tags(str_replace('</p>', ' ', $this->Content)), 0, $length).'.....' : null;
+  }
 }

@@ -47,15 +47,15 @@ class ThreeWhyData extends DataObject
     ]);
   }
 
-  public function canCreate($member = null, $context = array())
-  {
-    return false;
-  }
+  // public function canCreate($member = null, $context = array())
+  // {
+  //   return false;
+  // }
 
-  public function canDelete($member = null, $context = array())
-  {
-    return false;
-  }
+  // public function canDelete($member = null, $context = array())
+  // {
+  //   return false;
+  // }
 
   public function canView($member = null, $context = array())
   {

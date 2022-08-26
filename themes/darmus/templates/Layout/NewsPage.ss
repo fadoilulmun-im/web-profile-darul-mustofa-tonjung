@@ -15,7 +15,7 @@
                   </figure>
                   <div class="course-1-content pb-4">
                   <h2>$Title</h2>
-                  <p class="desc mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique accusantium ipsam.</p>
+                  <p class="desc mb-4">$ShortContent(120)</p>
                   <p><a href="s/$URLSegment" class="btn btn-primary rounded-0 px-4">Baca Selengkapnya</a></p>
                   </div>
               </div>
