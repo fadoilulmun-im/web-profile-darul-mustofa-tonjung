@@ -4,7 +4,7 @@ $ElementalArea
   <div class="container">
     
     <div class="row">
-      <div class="col-lg-9">
+      <div class="col-lg-9 mb-3">
         <div class="section-heading">
           <h2 class="text-black">News &amp; Updates</h2>
           <a href="blog">Read All News</a>
@@ -14,7 +14,7 @@ $ElementalArea
           <div class="col-lg-<% if countNews > 1 %>6<% else %>12<% end_if %>">
             <% loop getNews(1) %>
                 <div class="post-entry-big">
-                  <a href="$Link" class="img-link"><img src="$Images.First.Fill(397,265).URL" alt="Image" class="img-fluid"></a>
+                  <a href="$Link" class="img-link w-100"><img src="$Images.First.Fill(397,265).URL" alt="Image" class="img-fluid w-100"></a>
                   <div class="post-content">
                     <div class="post-meta"> 
                       <a>$Created.Nice $countNews</a>
