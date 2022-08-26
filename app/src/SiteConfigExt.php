@@ -16,10 +16,12 @@ class SiteConfigExt extends DataExtension
     'Address' => 'Text',
     'Phone' => 'Varchar(255)',
     'Email' => 'Varchar(255)',
+    'Slogan' => 'Varchar',
   ];
 
   private static $has_one = [
     'Logo' => AutoPublishImage::class,
+    'BgBreadCrumb' => AutoPublishImage::class,
   ];
 
   public function updateCMSFields(FieldList $fields){
@@ -44,6 +46,18 @@ class SiteConfigExt extends DataExtension
     $fields->addFieldToTab(
       'Root.Main',
       TextField::create('Email', 'Email')
+    );
+
+    $fields->addFieldToTab(
+      'Root.Main',
+      TextField::create('Slogan', 'Slogan')
+    );
+
+    $fields->addFieldToTab(
+      'Root.Main',
+      UploadField::create('BgBreadCrumb', 'BgBreadCrumb')
+        ->setFolderName('BgBreadCrumb')
+        ->setDescription('This will be displayed on the every Bread Crumb')
     );
 
     $config = GridFieldConfig_RecordEditor::create();

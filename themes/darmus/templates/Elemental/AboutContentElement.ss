@@ -6,7 +6,8 @@
     }
   </style>
 <% end_if %>
-<div class="section-bg style-1">
+
+<div class="section-bg style-1" style="<% if $BgImageID %>background-image: url({$BgImage.URL});<% end_if %>">
   <div class="container">
     <div class="row">
       <% if TitlePosition == 'Left' %>
@@ -33,7 +34,7 @@
       </div>
 
       <% if TitlePosition == 'Right' %>
-        <div class="col-lg-4">
+        <div class="col-lg-4 text-right">
           <h2 class="section-title-underline style-2">
             <span <% if TitleColor %>style="color: $TitleColor"<% end_if %>>$Title</span>
           </h2>

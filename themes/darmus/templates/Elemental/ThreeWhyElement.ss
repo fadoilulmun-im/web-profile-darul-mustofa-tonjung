@@ -11,7 +11,7 @@
       <% loop ThreeWhyDatas.Limit(3) %>
         <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
 
-          <div class="feature-1 border" style="height: 240px">
+          <div class="feature-1 border" style="height: 100%">
             <div class="icon-wrapper bg-primary">
               <span class="$Icon text-white"></span>
             </div>

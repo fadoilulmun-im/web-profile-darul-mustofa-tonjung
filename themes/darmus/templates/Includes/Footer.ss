@@ -3,10 +3,10 @@
     <div class="row">
       <div class="col-lg-3">
         <p class="mb-4"><img src="$SiteConfig.Logo.URL" alt="Image" height="70"></p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nemo minima qui dolor, iusto iure.</p>  
-        <p><a href="{$BaseHref}about-us">Learn More</a></p>
+        <p>$SiteConfig.Slogan</p>  
+        <p><a href="{$BaseHref}about-us">Selengkapnya</a></p>
       </div>
-      <div class="col-lg-3">
+      <div class="col-lg-2">
         <h3 class="footer-heading"><span>Links</span></h3>
         <ul class="list-unstyled">
           <% loop Menu(1) %>
@@ -14,15 +14,17 @@
           <% end_loop %>
         </ul>
       </div>
-      <div class="col-lg-2">
-        <% if Menu(2) %>
-          <h3 class="footer-heading"><span>Our School</span></h3>
-          <ul class="list-unstyled">
-            <% loop Menu(2) %>
-              <li><a href="$Link">$MenuTitle.XML</a></li>
-            <% end_loop %>
-          </ul>
-        <% end_if %>
+      <div class="col-lg-3">
+        <% loop Menu(1) %>
+          <% if Children && MenuTitle.XML == 'About Us' %>
+            <h3 class="footer-heading"><span>Our School</span></h3>
+            <ul class="list-unstyled">
+              <% loop Children %>
+                <li><a href="$Link">$MenuTitle.XML</a></li>
+              <% end_loop %>
+            </ul>
+          <% end_if %>
+        <% end_loop %>
       </div>
       <div class="col-lg-4">
           <h3 class="footer-heading"><span>Contact</span></h3>

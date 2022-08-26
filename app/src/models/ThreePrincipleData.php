@@ -1,9 +1,10 @@
 <?php
 
-use SilverStripe\Dev\Debug;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Forms\RequiredFields;
-use Elemental\ThreeWhyElement;
+use Elemental\ThreePrincipleElement;
+use TractorCow\Colorpicker\Color;
+use TractorCow\Colorpicker\Forms\ColorField;
 
 /**
  * Description
@@ -11,33 +12,23 @@ use Elemental\ThreeWhyElement;
  * @package silverstripe
  * @subpackage mysite
  */
-class ThreeWhyData extends DataObject
+class ThreePrincipleData extends DataObject
 {
   private static $default_sort = ['Sort' => 'ASC'];
 
   private static $db = [
-    'Title' => 'Varchar',
     'Icon' => 'Varchar',
+    'IconColor' => Color::class,
+    'Title' => 'Varchar',
+    'TitleColor' => Color::class,
     'Description' => 'Text',
+    'DescriptionColor' => Color::class,
     'Sort' => 'Int',
   ];
 
   private static $has_one = [
-    'ThreeWhyElement' => ThreeWhyElement::class,
+    'ThreePrincipleElement' => ThreePrincipleElement::class,
   ];
-
-  private static $summary_fields = [
-    'Title' => 'Title',
-    'Icon' => 'Icon',
-  ];
-
-  public function getCMSFields()
-  {
-    $fields = parent::getCMSFields();
-    $fields->removeByName(['ThreeWhyElementID', 'Sort']);
-
-    return $fields;
-  }
 
   public function getCMSValidator() {
     return new RequiredFields([
@@ -45,6 +36,17 @@ class ThreeWhyData extends DataObject
       'Icon',
       'Description',
     ]);
+  }
+
+  public function getCMSFields()
+  {
+    $fields = parent::getCMSFields();
+    $fields->removeByName([
+      'ThreePrincipleElementID', 
+      'Sort',
+    ]);
+
+    return $fields;
   }
 
   public function canCreate($member = null, $context = array())

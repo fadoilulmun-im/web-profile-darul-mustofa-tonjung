@@ -28,3 +28,10 @@ Name: page-extension
 Page:
   extensions:
     - DNADesign\Elemental\Extensions\ElementalPageExtension
+
+---
+Name: image-extension
+---
+SilverStripe\Assets\Image;:
+  extensions:
+    - AutoPublish

@@ -46,4 +46,9 @@ class TestimoniData extends DataObject
       'ImageID'
     ]);
   }
+
+  public function canView($member = null, $context = array())
+  {
+    return true;
+  }
 }

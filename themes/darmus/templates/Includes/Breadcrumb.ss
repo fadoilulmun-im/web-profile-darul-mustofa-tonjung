@@ -1,4 +1,4 @@
-<div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('$ThemeDir/images/bg_1.jpg')">
+<div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('$SiteConfig.BgBreadCrumb.URL')">
   <div class="container">
     <div class="row align-items-end">
       <div class="col-lg-7">
