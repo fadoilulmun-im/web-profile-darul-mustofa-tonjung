@@ -3,6 +3,7 @@
 namespace {
 
     use SilverStripe\CMS\Controllers\ContentController;
+    use SilverStripe\Security\Security;
 
     class PageController extends ContentController
     {
@@ -21,13 +22,18 @@ namespace {
          *
          * @var array
          */
-        private static $allowed_actions = [];
+        private static $allowed_actions = ['icomoon'];
 
         protected function init()
         {
             parent::init();
             // You can include any CSS or JS required by your project here.
             // See: https://docs.silverstripe.org/en/developer_guides/templates/requirements/
+        }
+
+        public function icomoon()
+        {
+            return $this->customise(array())->renderWith('Icomoon');
         }
     }
 }

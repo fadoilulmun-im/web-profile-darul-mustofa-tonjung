@@ -3,6 +3,7 @@
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Security\Security;
 use SilverStripe\Security\Member;
+use SilverStripe\Control\Director;
 
 /**
  * Description
@@ -39,6 +40,9 @@ class SocialMediaData extends DataObject
       "Updated_byID",
       'Sort',
     ]);
+
+    $field = $fields->dataFieldByName('Icon');
+    $field->setDescription('Silahkan lihat list icon tersedia di link berikut <a href="'.Director::absoluteBaseURL().'home/icomoon" target="_blank">'.Director::absoluteBaseURL().'home/icomoon</a>');
 
     return $fields;
   }
