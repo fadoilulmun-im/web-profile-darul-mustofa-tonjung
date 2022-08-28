@@ -6,8 +6,10 @@ $ElementalArea
     <div class="row">
       <div class="col-lg-9 mb-3">
         <div class="section-heading">
-          <h2 class="text-black">News &amp; Updates</h2>
-          <a href="blog">Read All News</a>
+          <% with $newsPage %>
+            <h2 class="text-black">$Title</h2>
+            <a href="$Link">Read All $Title</a>
+          <% end_with %>
         </div>
         <div class="row">
 
@@ -33,7 +35,7 @@ $ElementalArea
                     <a href="$Link" class="img-link mr-4"><img src="$Images.First.Fill(90,90).URL" alt="Image" class="img-fluid"></a>
                     <div class="post-content">
                       <div class="post-meta">
-                        <a href="#">$Created.Nice</a>
+                        <a href="#!">$Created.Nice</a>
                       </div>
                       <h3 class="post-heading"><a href="$Link">$Title.LimitCharacters</a></h3>
                     </div>
@@ -46,19 +48,23 @@ $ElementalArea
         </div>
       </div>
       <div class="col-lg-3">
-        <div class="section-heading">
-          <h2 class="text-black">Campus Videos</h2>
-          <a href="#!">View All Videos</a>
-        </div>
 
-        <% loop getVideos(2) %>
-          <a href="https://youtu.be/$YoutubeID" class="video-1 mb-4" data-fancybox="" data-ratio="2">
-            <span class="play">
-              <span class="icon-play"></span>
-            </span>
-            <img src="https://i.ytimg.com/vi_webp/$YoutubeID/hqdefault.webp" alt="Image" class="img-fluid w-100">
-          </a>
-        <% end_loop %>
+        <% if getVideos.Count %>
+          <div class="section-heading">
+            <% with videosPage %>
+              <h2 class="text-black">$Title</h2>
+              <a href="$Link">View All $Title</a>
+            <% end_with %>
+          </div>
+          <% loop getVideos(2) %>
+            <a href="https://youtu.be/$YoutubeID" class="video-1 mb-4" data-fancybox="" data-ratio="2">
+              <span class="play">
+                <span class="icon-play"></span>
+              </span>
+              <img src="https://i.ytimg.com/vi_webp/$YoutubeID/hqdefault.webp" alt="Image" class="img-fluid w-100">
+            </a>
+          <% end_loop %>          
+        <% end_if %>
         
       </div>
     </div>

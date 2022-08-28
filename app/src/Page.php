@@ -35,5 +35,15 @@ namespace {
         {
             return VideosData::get()->limit($limit);
         }
+
+        public function newsPage()
+        {
+            return NewsPage::get()->first();
+        }
+
+        public function videosPage()
+        {
+            return VideosPage::get()->first();
+        }
     }
 }

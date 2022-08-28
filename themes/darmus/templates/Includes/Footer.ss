@@ -10,14 +10,14 @@
         <h3 class="footer-heading"><span>Links</span></h3>
         <ul class="list-unstyled">
           <% loop Menu(1) %>
-            <li><a href="$Link">$MenuTitle.XML</a></li>
+            <li><a href="$Link">$MenuTitle.XML $ID</a></li>
           <% end_loop %>
         </ul>
       </div>
       <div class="col-lg-3">
         <% loop Menu(1) %>
-          <% if Children && MenuTitle.XML == 'About Us' %>
-            <h3 class="footer-heading"><span>Our School</span></h3>
+          <% if Children && MenuTitle.XML == 'About Us'  || $ID == 2 %>
+            <h3 class="footer-heading"><span>$Title</span></h3>
             <ul class="list-unstyled">
               <% loop Children %>
                 <li><a href="$Link">$MenuTitle.XML</a></li>

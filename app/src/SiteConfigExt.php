@@ -55,7 +55,7 @@ class SiteConfigExt extends DataExtension
 
     $fields->addFieldToTab(
       'Root.Main',
-      UploadField::create('BgBreadCrumb', 'BgBreadCrumb')
+      UploadField::create('BgBreadCrumb', 'Background Breadcrumb')
         ->setFolderName('BgBreadCrumb')
         ->setDescription('This will be displayed on the every Bread Crumb')
     );
