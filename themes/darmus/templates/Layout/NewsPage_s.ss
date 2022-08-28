@@ -11,7 +11,7 @@
               <% end_loop %>
             </div>
 
-            <h1 class="mb-4">$Title</h1>
+            <h1 class="mb-4 text-justify">$Title</h1>
 
             <div class="typography">
               $Content

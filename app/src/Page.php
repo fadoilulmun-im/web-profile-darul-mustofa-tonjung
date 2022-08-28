@@ -30,5 +30,10 @@ namespace {
             $count = DB::query("SELECT COUNT(*) FROM NewsData")->value();
             return $count;
         }
+
+        public function getVideos($limit = 4)
+        {
+            return VideosData::get()->limit($limit);
+        }
     }
 }

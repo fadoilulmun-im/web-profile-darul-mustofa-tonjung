@@ -103,4 +103,42 @@ class NewsData extends DataObject
   public function ShortContent($length = 30) {
     return $this->Content ? substr(strip_tags(str_replace('</p>', ' ', $this->Content)), 0, $length).'.....' : null;
   }
+
+  public function canCreate($member = null, $context = array())
+  {
+    return true;
+  }
+
+  public function canDelete($member = null, $context = array())
+  {
+    $member = Security::getCurrentUser();
+    if($member->inGroup('administrators')){
+      return true;
+    }
+
+    if($member->ID == $this->Created_byID){
+      return true;
+    }
+
+    return false;
+  }
+
+  public function canEdit($member = null, $context = array())
+  {
+    $member = Security::getCurrentUser();
+    if($member->inGroup('administrators')){
+      return true;
+    }
+
+    if($member->ID == $this->Created_byID){
+      return true;
+    }
+
+    return false;
+  }
+
+  public function canView($member = null, $context = array())
+  {
+    return true;
+  }
 }

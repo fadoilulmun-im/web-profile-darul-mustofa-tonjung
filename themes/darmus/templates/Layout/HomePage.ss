@@ -48,20 +48,18 @@ $ElementalArea
       <div class="col-lg-3">
         <div class="section-heading">
           <h2 class="text-black">Campus Videos</h2>
-          <a href="#">View All Videos</a>
+          <a href="#!">View All Videos</a>
         </div>
-        <a href="https://youtu.be/fY8L4K30hDw" class="video-1 mb-4" data-fancybox="" data-ratio="2">
-          <span class="play">
-            <span class="icon-play"></span>
-          </span>
-          <img src="https://img.youtube.com/vi/fY8L4K30hDw/sddefault.jpg" alt="Image" class="img-fluid">
-        </a>
-        <a href="https://youtu.be/fY8L4K30hDw" class="video-1 mb-4" data-fancybox="" data-ratio="2">
+
+        <% loop getVideos(2) %>
+          <a href="https://youtu.be/$YoutubeID" class="video-1 mb-4" data-fancybox="" data-ratio="2">
             <span class="play">
               <span class="icon-play"></span>
             </span>
-            <img src="$ThemeDir/images/course_5.jpg" alt="Image" class="img-fluid">
+            <img src="https://i.ytimg.com/vi_webp/$YoutubeID/hqdefault.webp" alt="Image" class="img-fluid w-100">
           </a>
+        <% end_loop %>
+        
       </div>
     </div>
   </div>

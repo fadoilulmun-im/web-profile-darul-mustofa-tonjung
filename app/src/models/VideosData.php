@@ -53,4 +53,42 @@ class VideosData extends DataObject
       $this->Updated_by = $member->ID;
     }
   }
+
+  public function canCreate($member = null, $context = array())
+  {
+    return true;
+  }
+
+  public function canDelete($member = null, $context = array())
+  {
+    $member = Security::getCurrentUser();
+    if($member->inGroup('administrators')){
+      return true;
+    }
+
+    if($member->ID == $this->Created_byID){
+      return true;
+    }
+
+    return false;
+  }
+
+  public function canEdit($member = null, $context = array())
+  {
+    $member = Security::getCurrentUser();
+    if($member->inGroup('administrators')){
+      return true;
+    }
+
+    if($member->ID == $this->Created_byID){
+      return true;
+    }
+
+    return false;
+  }
+
+  public function canView($member = null, $context = array())
+  {
+    return true;
+  }
 }
