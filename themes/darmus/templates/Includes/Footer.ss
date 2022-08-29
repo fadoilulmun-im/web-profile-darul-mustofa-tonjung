@@ -4,13 +4,13 @@
       <div class="col-lg-3">
         <p class="mb-4"><img src="$SiteConfig.Logo.URL" alt="Image" height="70"></p>
         <p>$SiteConfig.Slogan</p>  
-        <p><a href="{$BaseHref}about-us">Selengkapnya</a></p>
+        <p><a href="$AboutPage.Link">Selengkapnya</a></p>
       </div>
       <div class="col-lg-2">
         <h3 class="footer-heading"><span>Links</span></h3>
         <ul class="list-unstyled">
           <% loop Menu(1) %>
-            <li><a href="$Link">$MenuTitle.XML $ID</a></li>
+            <li><a href="$Link">$MenuTitle.XML</a></li>
           <% end_loop %>
         </ul>
       </div>

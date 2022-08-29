@@ -45,5 +45,10 @@ namespace {
         {
             return VideosPage::get()->first();
         }
+
+        public function AboutPage()
+        {
+            return Page::get()->filter('ID', 2)->first();
+        }
     }
 }
